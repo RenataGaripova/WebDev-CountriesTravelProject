@@ -1,0 +1,76 @@
+<div class="card w-100">
+  <div class="card-body">
+    <div class="card-title">
+
+      <div class="left-group">
+          <span class="title country">Country</span>
+          <span class="title reports">Reports</span>
+        </div>
+
+        <div class="right-group">
+          <span id="select-location">
+            <select (change)="onNavigate($event)" class="form-select" aria-label="Default select example">
+              <option selected id="text-selector">Countries</option>
+              <option value="countrieslist">See all...</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </span>
+          <a href="#" class="btn btn-primary custom-btn" routerLink="/log-in">Sign in</a>
+        </div>
+     
+  </div>
+  </div>
+</div>
+
+
+
+
+<div class="menu">
+
+  <div class="country-culture-travel">
+    <h3 class="card-title">Culture</h3>
+    <p class="card-title-countries">  Countries</p>
+    <p class="card-title">Travel</p>
+  </div>
+
+  <div class="map">
+    <img src="\assets\map.png" alt="Image">
+   
+  </div>
+
+  <div class="info">
+    <p>CountryReports delivers unique content on Culture, Countries and Travel from around the world. Students, tourists, libraries, business and researchers appreciate our ability deliver hard to find, fun and current information. Get started, pick a country!</p>
+
+   <h3>Most Popular  <span>countries</span> </h3>
+ 
+
+   
+
+      <div class="most-popular-countries">
+        <div class="card" style="width: 18rem;" *ngFor="let country of list_countries">
+          <img src="{{country.image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">{{country.description}}</p>
+            <br>
+            <a [routerLink]="['/country', country.id]" href="#" class="btn btn-primary">See More</a>
+          </div>
+          <!-- <button type="button" class="btn btn-success">See More</button> -->
+        </div>
+      </div>
+      
+      </div>
+
+     
+
+    
+        </div>
+        
+            
+        
+
+     
+      
+
+  <!-- </div> -->

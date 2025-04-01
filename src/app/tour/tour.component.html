@@ -1,0 +1,124 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left: 50px;">
+    <a class="navbar-brand" href="#">Navigaton</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Your Profile</a>
+        </li>
+        <li class="nav-item">
+            <a [routerLink]="['/country', tour?.country_id]" class="nav-link">Return</a>
+          </li>
+      </ul>
+    </div>
+</nav> 
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img [src]="tour?.images + 'img1.png'"  class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img [src]="tour?.images + 'img1.png'"  class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img [src]="tour?.images + 'img1.png'" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="tour-text">
+    <h1 class="main heading">{{tour?.name}}</h1>
+
+      <h2 class="heading">Description of a tour:</h2>
+      <p class="page-content history">
+          {{ tour?.description }}
+      </p>
+      <h2 class="heading" style="margin-top: 55px;">If you wish to book a tour, complete a form below and we will contact you :) </h2>
+      
+</div>
+
+  <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <h2 class="submitted" style="color:rgb(0, 197, 0);">{{was_added}}</h2>
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+              <form #myForm="ngForm" nonvalidate>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="firstName" class="form-control form-control-lg" ngModel name="first_name"/>
+                      <label class="form-label" for="firstName">First Name</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="lastName" class="form-control form-control-lg" ngModel name="last_name"/>
+                      <label class="form-label" for="lastName">Last Name</label>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="email" id="emailAddress" class="form-control form-control-lg" ngModel name="email"/>
+                      <label class="form-label" for="emailAddress">Email</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="tel" id="phoneNumber" class="form-control form-control-lg" ngModel name="phone"/>
+                      <label class="form-label" for="phoneNumber">Phone Number</label>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-12">
+  
+                    <select class="form-select" aria-label="Default select example" ngModel name="option">
+                        <option selected>Select contact option:</option>
+                        <option value="1">Contact via emal</option>
+                        <option value="2">Contact via phone number</option>
+                      </select>  
+                  </div>
+                </div>
+  
+                <div class="mt-4 pt-2">
+                    <button type="button" class="btn btn-primary btn-lg" [disabled]="myForm.invalid" (click)="addTourist(myForm)">Submit!</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+

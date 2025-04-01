@@ -1,0 +1,109 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left: 50px;">
+    <a class="navbar-brand" href="#">Navigaton</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Your Profile</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink='/countrieslist' class="nav-link">Return</a>
+          </li>
+      </ul>
+    </div>
+</nav> 
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img [src]="country?.images + 'img1.png'"  class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img [src]="country?.images + 'img2.png'"  class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img [src]="country?.images + 'img3.png'" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<div class="page-text">
+  <h1 class="main-heading">Welcome to a page devoted to {{country?.name}} !</h1>
+
+    <h2 class="heading">History Facts</h2>
+    <p class="page-content history">
+        {{ country?.history }}
+    </p>
+
+    <h2 class="heading">Geography</h2>
+    <div class="map">
+      <img id="map-img" src="{{country?.map}}">
+      <p class="page-content geography">
+        {{ country?.geography }}
+      </p>
+    </div>
+    
+
+    <h2 class="heading">Holidays</h2>
+    <p class="page-content holidays">
+        {{ country?.holidays }}
+    </p>
+
+    <h2 class="heading"> Travel </h2>
+    <p class="page-content travel">
+        {{ country?.travel }}
+    </p>
+    
+    <p style="font-size: 18pt;"><a [routerLink]="['/tours', country?.id]" href="#" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Book a tour...</a></p>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-12">
+      <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+        <div class="card-body p-4">
+          <div data-mdb-input-init class="form-outline mb-4">
+            <form #myForm="ngForm" nonvalidate>
+              <input type="text" class="addANote" class="form-control" placeholder="Enter your Username..." ngModel name="username"/>
+              <input type="text" class="addANote" class="form-control" style="margin-top:10px" placeholder="Type comment..." ngModel name="comment" />
+              <button type="button" class="btn btn-outline-primary" style="margin-top:10px" [disabled]="myForm.invalid" (click)="submitComment(myForm)">Post</button>
+            </form>
+          </div>
+          
+          <ng-container class = "comments-container" *ngFor="let comment of comments">
+          <div class="card mb-4">
+            <div class="card-body">
+              <p>{{comment?.text}}</p>
+  
+              <div class="d-flex justify-content-between">
+                <div class="d-flex flex-row align-items-center">
+                  <img src = {{comment?.avatar_image}} alt="avatar" width="25"
+                    height="25" />
+                  <p class="small mb-0 ms-2">{{comment?.username}}</p>
+                </div>
+                <div class="d-flex flex-row align-items-center">
+                  <button type="button" (click)="sendLike(comment)" class="btn btn-outline-danger">Like</button>
+                  <i class="far fa-thumbs-up mx-2 fa-xs text-body" style="margin-top: -0.16rem;"></i>
+                  <p class="small text-muted mb-0">{{comment?.likes}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        </div>
+      </div>
+    </div>
+</div>
+

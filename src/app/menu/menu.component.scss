@@ -1,0 +1,170 @@
+.block-title{
+    margin-top:400px;
+    
+}
+.card-body{
+display: flex;
+align-items: center;
+height:200px;
+}
+.card-title{
+display: flex;
+align-items: center;
+font-size: 55px;
+margin-left: 30px;
+
+  /* Make sure the font is actually loaded and available (e.g., Lato-Black) */
+font-weight: 400;
+
+}
+
+
+
+.card-title-countries{
+font-size:65px;
+margin-left: 45px;
+}
+
+.card-image{
+margin:0;
+}
+
+.custom-btn {
+font-size: 1.25rem;
+font-weight: bold;
+}
+
+.form-select{
+font-weight: bold;
+font-size: 1.5rem;
+border:none;
+outline: none;
+box-shadow: none;
+}
+#select-location{
+// margin-left:200px;
+width:160px;
+border: none;
+
+}
+
+
+$blue: #0d6efd;
+$blue-400: lighten($blue, 20%); // or a direct hex value
+
+$blue: #0d6efd;
+$blue-0: lighten($blue, 0%); // or a direct hex value
+
+$purple: #6f42c1;
+$purple-400: lighten($purple, 10%); // or a direct hex value
+
+.country {
+color: $blue-400;
+}
+.reports{
+color:$purple-400;
+}
+
+.right-group {
+margin-left: 600px; /* Pushes right-group to the far right */
+display: flex;
+align-items: center;
+gap: 120px; /* Optional: adds spacing between the select and the button */
+}
+
+.select-country{
+padding:10px;
+font-size: 12px;
+width:130px;
+margin-left:30px;
+margin-top:10px;
+height:40px;
+background-color: $blue-0;
+color: white;
+}
+
+.menu{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    gap: 100px;
+    // background-color: aqua;
+    flex-wrap: wrap;
+    background-image: url("/assets/image-menu-mount.png");
+    filter: brightness(90%);
+    
+}
+
+.country-culture-travel{
+    margin-left:300px;
+}
+
+.map{
+    width:50%;
+    height:50%;
+    // background-image: url("/assets/map.png");
+    // background-repeat: no-repeat;
+    // background-size: contain; 
+    // background-color: red;
+}
+
+img{
+    width:100%;
+}
+
+.info{
+    width: 70%;
+    height: 80%;
+    // background-color:transparent;
+    background-color: rgba(255, 255, 255, 0.8); 
+    margin: auto;
+    padding:50px
+  
+}
+
+h3 span{
+    color: #666; 
+}
+
+.most-popular-countries{
+    width:100%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px,
+   
+    
+}
+.card-body{
+  margin-bottom:50px;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-success{
+    width:150px;
+    margin: auto;
+    // margin-bottom:50px;
+}
+
+.carousel{
+    display: flex;
+    width: 100%;
+    height:100%;
+}
+
+.d-block {
+    // width: 300px;
+    // height: 250px
+}
+
+.end{
+    display: flex;
+    justify-content: center;
+    gap:350px;
+    width: 100vw;
+    height: 40vh;
+    // background-image: url("/assets/image-end.png");
+    background-color: aqua;
+}

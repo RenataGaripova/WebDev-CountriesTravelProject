@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left: 50px; padding-right: 50px;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navigation</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Your Profile</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" #filter>
+        <button class="btn btn-outline-primary" type="button" (click)="filterResults(filter.value)">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<p class="h3 heading">Explore different cultures and share your opinions in comments section!</p>
+<div class="container d-flex justify-content-center flex-wrap">
+<ng-container class = "container" *ngFor="let countriesList of filtered_list_data"> 
+    <div class="card mb-3 shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
+        <img src="{{ countriesList.image }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ countriesList.name }}</h5>
+            <p class="card-text">{{ countriesList.description }}</p>
+            <a [routerLink]="['/country', countriesList.id]" href="#" class="btn btn-primary">See More</a>
+        </div>
+    </div>
+</ng-container>
+</div>
