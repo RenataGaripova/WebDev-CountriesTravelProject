@@ -1,7 +1,8 @@
 # FinalProject
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
-
+Members: Гарипова Рената, Муканов Батырлан Сырымбекулы, Шарипов Алишер.
+This app aims to educate people about foreign countries and give them an opportunity to chat. There is also a section dedicated to booking toures.
 ## Development server
 
 To start a local development server, run:
