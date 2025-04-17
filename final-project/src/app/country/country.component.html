@@ -77,7 +77,7 @@
           <div data-mdb-input-init class="form-outline mb-4">
             <form #myForm="ngForm" nonvalidate>
               <input type="text" class="addANote" class="form-control" placeholder="Enter your Username..." ngModel name="username"/>
-              <input type="text" class="addANote" class="form-control" style="margin-top:10px" placeholder="Type comment..." ngModel name="comment" />
+              <input type="text" class="addANote" class="form-control" style="margin-top:10px" placeholder="Type comment..." ngModel name="text" />
               <button type="button" class="btn btn-outline-primary" style="margin-top:10px" [disabled]="myForm.invalid" (click)="submitComment(myForm)">Post</button>
             </form>
           </div>

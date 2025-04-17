@@ -21,37 +21,37 @@ export class MenuComponent {
   }
   // list_countries:CountriesList[]=[];
   list_countries:CountriesList[]=[ {
-    "id":0,
+    "id":1,
     "image":"./assets/ger-flag.png",
     "name":"Germany",
     "description":"Germany, officially the Federal Republic of Germany,is a country in Central Europe..."
   },
   {
-    "id":1,
+    "id":2,
     "image":"./assets/netherlands-flag.png",
     "name":"The Netherlands",
     "description":"The Netherlands, informally Holland, is a country in Northwestern Europe..."
   },
   {
-    "id":2,
+    "id":3,
     "image":"./assets/france-flag.png",
     "name":"France",
     "description":"France, officially the French Republic, is a country located primarily in ..."
   },
   {
-    "id":3,
+    "id":4,
     "image":"./assets/britain-flag.png",
     "name":"The Great Britain",
     "description":"Great Britain is an island in the North Atlantic Ocean..."
   },
   {
-    "id":4,
+    "id":5,
     "image":"./assets/canada-flag.png",
     "name":"Canada",
     "description":"Canada is a country in North America..."
   },
   {
-    "id":5,
+    "id":6,
     "image":"./assets/japan-flag.png",
     "name":"Japan",
     "description":"Japan is an island country in East Asia. Located in the Pacific Ocean..."

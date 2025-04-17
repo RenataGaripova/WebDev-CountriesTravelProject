@@ -1,6 +1,6 @@
 [
     {
-      "id":0,
+      "id":1,
       "name":"Germany",
       "images":"./assets/germ_",
       "map":"./assets/map_germany.png",
@@ -10,7 +10,7 @@
       "travel": "Germany is a top European travel destination, offering a mix of historical landmarks, cultural heritage, and stunning natural landscapes. Berlin, the capital, is filled with historical sites such as the Brandenburg Gate, Berlin Wall Memorial, and Reichstag Building. Munich is known for its charming old town, Marienplatz, and Neuschwanstein Castle, the real-life inspiration for Disney’s Cinderella castle. The Romantic Road in Bavaria leads travelers through medieval towns like Rothenburg ob der Tauber, with its half-timbered houses and cobblestone streets. Germany is home to some of the world’s finest museums, such as the Pergamon Museum in Berlin, the Dachau Concentration Camp Memorial near Munich, and the Bauhaus Museum in Weimar. The Black Forest and Bavarian Alps offer breathtaking hiking trails and skiing resorts. The Rhine Valley is famous for its vineyard-covered hills, river cruises, and fairytale-like castles.Germany’s diversity makes it a must-visit destination for history lovers, adventure seekers, and cultural explorers alike."
     },
     {
-      "id":1,
+      "id":2,
       "name":"The Netherlands",
       "images":"./assets/neth-",
       "map":"./assets/the_nether_map.png",
@@ -20,7 +20,7 @@
       "travel": "The Netherlands is a top European tourist destination, famous for its historic cities, tulip fields, windmills, and vibrant cultural scene. The capital city, Amsterdam, is world-famous for its canal network, historic buildings, and world-class museums. Visitors flock to the Rijksmuseum, Van Gogh Museum, and Anne Frank House, while the Jordaan district offers charming streets lined with cafés and boutiques. Every spring, the Keukenhof Gardens burst into bloom with millions of colorful tulips. Located in Lisse, this breathtaking floral display attracts tourists from around the world. For a taste of traditional Dutch life, visitors head to Kinderdijk, where 19 historic windmills stand against a picturesque backdrop. Zaanse Schans, near Amsterdam, is another must-see with wooden houses, cheese-making demonstrations, and working windmills. Unlike other Dutch cities, Rotterdam is known for its modern skyline, cutting-edge architecture, and Europe’s largest port. Attractions include the Erasmus Bridge, Markthal, and Cube Houses. The Hague (Den Haag) is home to the Dutch government, the International Court of Justice, and the Mauritshuis Museum, which houses Vermeer’s 'Girl with a Pearl Earring.' The Netherlands offers stunning North Sea beaches in Scheveningen and Texel Island. The Dutch cycling routes, including the Hoge Veluwe National Park, provide breathtaking landscapes and a peaceful escape from urban life."
     },
     {
-      "id":2,
+      "id":3,
       "name":"France",
       "images":"./assets/france-",
       "map":"./assets/france-map.png",
@@ -30,7 +30,7 @@
       "travel": "France is the most visited country in the world, welcoming over 80 million tourists annually. From historic landmarks to stunning landscapes, France offers endless experiences. No trip to France is complete without exploring Paris, home to world-famous sites like the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Champs-Élysées. The city’s cafés, art galleries, and charming neighborhoods, like Montmartre, make it a dream destination. The French Riviera is synonymous with luxury. Cities like Nice, Cannes, and Monaco attract celebrities and tourists with their beautiful beaches, film festivals, and exclusive resorts. Often called the 'Garden of France,' the Loire Valley is famous for its fairytale châteaux, including Château de Chambord and Château de Chenonceau. The Provence region is famous for its lavender fields, vineyards, and Roman amphitheaters in cities like Arles and Avignon. This breathtaking island monastery in Normandy appears to rise from the sea, making it one of the most awe-inspiring sights in France. For ski lovers, resorts like Chamonix and Courchevel offer world-class skiing, while summer brings breathtaking hiking trails. History enthusiasts visit the D-Day beaches where Allied forces landed in 1944, with museums and memorials honoring World War II heroes."
     },
     {
-      "id":3,
+      "id":4,
       "name":"The Great Britain",
       "images":"./assets/brit-",
       "map":"./assets/uk_map.png",
@@ -40,7 +40,7 @@
       "travel": "Tourism in the United Kingdom is a major industry and contributor to the U.K. economy, which is the world's 10th biggest tourist destination, with over 40.1 million visiting in 2019, contributing a total of £234 billion to the GDP. £23.1 billion was spent in the UK by foreign tourists in 2017. VisitBritain data shows that the USA remains the most valuable inbound market, with American visitors spending £2.1 billion in 2010. Nevertheless, the number of travellers originating from Europe is much larger than those travelling from North America: 21.5 million compared to 3.5 million American/Canadian visitors. After 9-year rise, as of 2019, United Kingdom attracting 40.86 million international tourists (Even before COVID-19 pandemic began (Between March 2020 and March 2022), which was more than two times U.K.'s total population. The country's principal tourist destinations are London, Edinburgh, Oxford, Cambridge, York, and Canterbury. The United Kingdom hosts a total of 33 World Heritage sites, the 8th most in the world.[6] The Lonely Planet travel guide voted England number 2, after Bhutan, as one of the best countries to visit in 2020.[7] Some of the most popular cities include London, Edinburgh and Manchester and notable attractions include the Palace of Westminster, the London Eye and Edinburgh Castle."
     },
     {
-      "id":4,
+      "id":5,
       "name":"Canada",
       "images":"./assets/canada-",
       "map":"./assets/canada-map.png",
@@ -50,7 +50,7 @@
       "travel":"Canada has a large domestic and foreign tourism industry. The second largest country in the world, Canada's wide geographical variety is a significant tourist attractor. Much of the country's tourism is centred in the following regions: Toronto, Montreal, Quebec City, Vancouver/Whistler, Niagara Falls, Vancouver Island, Canadian Rockies, British Columbia's Okanagan Valley, Churchill, Manitoba and the National Capital Region of Ottawa-Gatineau. The large cities are known for their culture, diversity, as well as the many national parks and historic sites. In 2023, non-Canadian visitors made 27.2 million trips to Canada, with U.S. residents contributing the most, accounting for 21.2 million of those trips. The total spending by tourists reached $12.9 billion for U.S. residents and $12.6 billion for overseas visitors. Domestic and international tourism combined directly contributes 1% of Canada's total GDP and supports 309,000 jobs in the country."
     },
     {
-      "id":5,
+      "id":6,
       "name":"Japan",
       "images":"./assets/japan-",
       "map":"./assets/japan-map.png",
