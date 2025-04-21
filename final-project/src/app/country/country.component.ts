@@ -36,10 +36,11 @@ export class CountryComponent implements OnInit {
   ngOnInit(): void {
     this.countryService.getCountryById(this.countryId).subscribe((data: Country) => {this.country = data;});
     this.countryService.getCommentsById(this.countryId).subscribe({next: (data: any) => this.comments=data});
+    console.log(this.comments);
   }
 
   sendLike(comment: Comments) {
-    this.countryService.sendLike(comment.id);
+    this.countryService.sendLike(comment);
   }
   
   submitComment(form: any) {

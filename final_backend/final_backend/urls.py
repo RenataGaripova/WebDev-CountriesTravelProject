@@ -16,11 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from api.views import get_country_by_id, CommentListAPI, LikeCommentAPI
+from api.views import get_country_by_id, get_country_list, get_tour_by_id
+from api.views import CommentListAPI, LikeCommentAPI, TouristAPI
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('datawizard/', include('data_wizard.urls')),
     path('api/country/<int:id>/', get_country_by_id),
     path('api/country/<int:country_id>/comments', CommentListAPI.as_view()),
-    path('api/comments/<int:id>/likes', LikeCommentAPI.as_view())
+    path('api/comments/<int:id>/likes/', LikeCommentAPI.as_view()),
+    path('api/countrylist', get_country_list),
+    path('api/country/<int:country_id>/tour', get_tour_by_id),
+    path('api/tour/<int:tour_id>/tourist', TouristAPI.as_view())
 ]

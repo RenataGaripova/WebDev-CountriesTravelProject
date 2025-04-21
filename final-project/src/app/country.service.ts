@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Country } from '../country';
 import { Comments } from '../comments';
+import {CountriesList} from '../countries-list';
 import { Tour } from '../tour';
 import { HttpClient } from '@angular/common/http';
 import * as data_long from './country/data_long.json'
@@ -12,10 +13,19 @@ import { map, Observable } from 'rxjs';
 })
 export class CountryService {
   protected country_data: Country[] =(data_long as any).default;
-  protected comments: Comments[] = (comments_data as any).default;
   protected tour_data: Tour[] = (tour_data as any).default;
 
   constructor(private http: HttpClient) {}
+
+  getCountryList(): Observable<CountriesList[]> {
+    return this.http.get<CountriesList[]>(`http://127.0.0.1:8000/api/countrylist`).pipe(
+      map(countrylist => 
+        countrylist.map((country: any) => ({
+          ...country
+        }))
+      )
+    );
+  }
 
   getCountryById(id: number): Observable<Country> {
     return this.http.get<{ data: Country }>(`http://127.0.0.1:8000/api/country/${id}/`).pipe(map(response => response.data));
@@ -31,8 +41,8 @@ export class CountryService {
     );
   }
 
-  getTourById(id: number): Tour | undefined {
-    return this.tour_data.find((tour) => tour.country_id === id);
+  getTourById(country_id: number): Observable<Tour> {
+    return this.http.get<{ data: Tour }>(`http://127.0.0.1:8000/api/country/${country_id}/tour`).pipe(map(response => response.data));
   }
 
   postComment(country_id: number, data: any) {
@@ -46,7 +56,21 @@ export class CountryService {
     });
   }
 
-  sendLike(id: number) {
-    this.http.post(`http://127.0.0.1:8000/api/comments/${id}/likes`, {});
+  sendLike(comment: Comments) {
+    console.log(comment.id);
+    this.http.post(`http://127.0.0.1:8000/api/comments/${comment.id}/likes/`, {}).subscribe((res: any) => {
+      comment.likes = res.likes;
+    });
+  }
+
+  sendTouristForm(tour: Tour, data: any) {
+    this.http.post(`http://127.0.0.1:8000/api/tour/${tour.id}/tourist`, data).subscribe({
+      next: (res) => {
+        console.log('Success:', res);
+      },
+      error: (err) => {
+        console.error('Error posting tourist:', err);
+      }
+    });
   }
 }
