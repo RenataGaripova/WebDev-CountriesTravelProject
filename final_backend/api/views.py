@@ -5,6 +5,9 @@ from rest_framework.views import APIView
 from rest_framework import status
 from api.models import Country, Comment, CountryList, Tour, Tourist
 from api.serializers import CountrySerializer, CommentSerializer, CountryListSerializer, TourSerializer, TouristSerializer
+# from rest_framework.response import Response
+from django.contrib.auth.models import User
+from rest_framework_simplejwt.tokens import RefreshToken
 # Create your views here.
 
 
@@ -89,3 +92,26 @@ class TouristAPI(APIView):
         )
         serializer = TouristSerializer(tourist_new)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+
+@api_view(['POST'])
+def user_sign_up(request):
+    email = request.data.get('email')
+    password = request.data.get('password')
+
+    if not email or not password:
+        return Response({'error': 'Email and password are required'}, status=status.HTTP_400_BAD_REQUEST)
+
+    if User.objects.filter(email=email).exists():
+        return Response({'error': 'User with this email already exists'}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Set email as the username (so Django's User model stays happy)
+    user = User.objects.create_user(username=email, email=email, password=password)
+
+    # Issue JWT tokens right after registration
+    refresh = RefreshToken.for_user(user)
+    return Response({
+        'refresh': str(refresh),
+        'access': str(refresh.access_token),
+    }, status=status.HTTP_201_CREATED)
+

@@ -3,8 +3,8 @@ import { MenuComponent } from './menu/menu.component';
 import { CountriesListComponent } from './countries-list/countries-list.component';
 import { CountryComponent } from './country/country.component';
 import { TourComponent } from './tour/tour.component';
-import { LogInComponent } from './log-in/log-in.component';
-import { LogUpComponent } from './log-up/log-up.component';
+import { LoginComponent } from './log-in/log-in.component';
+import { LogupComponent } from './log-up/log-up.component';
 export const routes: Routes = [
   {
     path: 'countrieslist',
@@ -23,11 +23,11 @@ export const routes: Routes = [
   },
   {
     path:'log-in',
-    component:LogInComponent
+    component:LoginComponent
   },
   {
     path:'log-up',
-    component:LogUpComponent
+    component:LogupComponent
   },
   {
     path:'tours/:id',

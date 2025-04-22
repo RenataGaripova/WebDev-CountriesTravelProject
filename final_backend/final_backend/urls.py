@@ -16,8 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from api.views import get_country_by_id, get_country_list, get_tour_by_id
+from api.views import get_country_by_id, get_country_list, get_tour_by_id, user_sign_up
 from api.views import CommentListAPI, LikeCommentAPI, TouristAPI
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +31,8 @@ urlpatterns = [
     path('api/comments/<int:id>/likes/', LikeCommentAPI.as_view()),
     path('api/countrylist', get_country_list),
     path('api/country/<int:country_id>/tour', get_tour_by_id),
-    path('api/tour/<int:tour_id>/tourist', TouristAPI.as_view())
+    path('api/tour/<int:tour_id>/tourist', TouristAPI.as_view()),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/register/', user_sign_up),
 ]
