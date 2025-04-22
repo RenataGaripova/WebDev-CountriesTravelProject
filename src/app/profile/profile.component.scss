@@ -1,0 +1,282 @@
+/* === ОСНОВНЫЕ СТИЛИ КОНТЕЙНЕРА === */
+
+.profile-container {
+  max-width: 450px;
+  margin: 60px auto; // Увеличили отступ сверху/снизу
+  padding: 35px;    // Увеличили внутренний отступ
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px; // Чуть больше скругление
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); // Чуть заметнее тень
+  text-align: center;
+}
+
+.profile-title {
+  font-size: 1.7em; // Чуть крупнее
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px; // Больше отступ
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; // Чуть больше расстояние
+}
+
+/* === НОВЫЕ СТИЛИ ДЛЯ АВАТАРА И КНОПКИ СМЕНЫ === */
+.avatar-container {
+  position: relative; // Для позиционирования кнопки
+  width: 130px; // Ширина равна фото
+  height: 130px; // Высота равна фото
+  margin: 0 auto 30px auto; // Центрирование и отступ снизу
+}
+
+.profile-photo {
+  width: 100%; // Занимает всю ширину контейнера
+  height: 100%; // Занимает всю высоту контейнера
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #007bff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  display: block; // Убираем лишний отступ
+  /* Убрали margin-left/right: auto т.к. центрируем через родителя */
+  /* Убрали margin-bottom, задаем его для .avatar-container */
+}
+
+.change-avatar-button {
+  position: absolute; // Позиционируем относительно .avatar-container
+  bottom: 5px;        // Положение снизу
+  right: 5px;         // Положение справа
+  width: 36px;        // Размер кнопки
+  height: 36px;       // Размер кнопки
+  background-color: rgba(0, 0, 0, 0.6); // Полупрозрачный фон
+  color: white;
+  border: none;
+  border-radius: 50%; // Круглая кнопка
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  padding: 0; // Убираем внутренние отступы, если есть
+
+  i { // Иконка камеры
+    font-size: 1.1em;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+   &:focus {
+     outline: none;
+     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); // Белый контур при фокусе
+   }
+}
+/* ================================================= */
+
+
+/* === СТИЛИ ДЛЯ РЕЖИМА ПРОСМОТРА === */
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px; // Немного увеличили отступ
+  padding: 10px 0; // Немного увеличили отступ
+  border-bottom: 1px solid #f0f0f0;
+  text-align: left;
+}
+.info-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.info-item i {
+  color: #007bff;
+  margin-right: 15px; // Увеличили отступ
+  width: 20px;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #333;
+  margin-right: 10px; // Увеличили отступ
+  min-width: 100px; // Увеличили мин. ширину метки
+  flex-shrink: 0;
+}
+
+.info-value {
+  word-break: break-word;
+  color: #555;
+}
+
+/* === НОВЫЕ СТИЛИ ДЛЯ ССЫЛКИ "СМЕНИТЬ ПАРОЛЬ" === */
+.security-link-container {
+  text-align: left; // Выравниваем влево
+  margin-top: 25px;   // Отступ сверху
+  padding-top: 15px;  // Внутренний отступ сверху
+  border-top: 1px solid #eee; // Разделитель сверху
+}
+
+.change-password-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  i {
+    font-size: 1em; // Размер иконки ключа
+  }
+}
+/* ================================================= */
+
+
+/* === ОСНОВНЫЕ СТИЛИ КНОПОК (Общие) === */
+button.profile-button {
+  margin-top: 0; /* Убираем общий margin-top, управляем через контейнеры */
+  padding: 10px 20px; // Немного уменьшили паддинг
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95em; // Чуть меньше шрифт
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+button.profile-button i {
+  margin-right: 0;
+  font-size: 1.1em;
+}
+
+button.profile-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+button.profile-button:focus {
+  outline: 2px solid #0056b3;
+  outline-offset: 2px;
+}
+
+button.profile-button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+/* === СТИЛИ ДЛЯ ФОРМЫ РЕДАКТИРОВАНИЯ === */
+.profile-form {
+  margin-top: 25px; // Отступ сверху для формы
+  text-align: left;
+}
+
+.form-field {
+  margin-bottom: 25px;
+
+  label {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 10px;
+
+    i {
+      color: #007bff;
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+      font-size: 1.05em;
+    }
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    background-color: #fff;
+
+    &:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    }
+  }
+
+  input.ng-invalid.ng-touched {
+    border-color: #dc3545;
+  }
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.85em;
+  margin-top: 8px;
+  padding-left: 5px;
+}
+
+
+/* === СТИЛИ ДЛЯ КОНТЕЙНЕРОВ КНОПОК === */
+
+/* Контейнер для кнопок формы "Сохранить" / "Отмена" */
+.form-actions {
+  margin-top: 35px;
+  padding-top: 20px; // Отступ сверху внутри блока
+  border-top: 1px solid #eee; // Разделитель сверху
+  display: flex;
+  justify-content: center; // Центрируем кнопки
+  gap: 15px;
+}
+
+/* Контейнер для кнопок "Редактировать" / "Выход" в режиме просмотра */
+.view-actions {
+  margin-top: 30px;
+  padding-top: 20px; // Отступ сверху внутри блока
+  border-top: 1px solid #eee; // Разделитель сверху
+  display: flex;
+  justify-content: center; // Центрируем кнопки
+  gap: 15px; // Отступ между кнопками
+}
+
+/* Специфичные стили для кнопки выхода */
+.logout-button {
+    background-color: #6c757d; // Серый для выхода (или красный #dc3545)
+    &:hover {
+      background-color: #5a6268; // Темнее серый
+      box-shadow: none;
+    }
+     &:focus {
+       outline-color: #5a6268;
+     }
+}
+
+/* Специфичные стили для кнопки Отмена в форме */
+.cancel-button {
+    background-color: #6c757d;
+    &:hover {
+      background-color: #5a6268;
+      box-shadow: none;
+    }
+     &:focus {
+       outline-color: #5a6268;
+     }
+}

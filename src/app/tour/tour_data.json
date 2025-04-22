@@ -1,0 +1,44 @@
+[
+    {
+      "id":0,
+      "name":"Germany – Bavarian Fairytale Tour",
+      "country_id":0,
+      "images":"./assets/germ-tour-",
+      "description":"Explore the heart of Bavaria, where medieval castles, scenic villages, and lively beer gardens await. Begin your journey in Munich, with a guided tour of Marienplatz and the grand Nymphenburg Palace. Travel to Neuschwanstein Castle, the fairytale inspiration for Disney’s iconic castle. Wander through the picturesque town of Rothenburg ob der Tauber, where cobblestone streets and half-timbered houses transport you back in time. Take a scenic drive along the Romantic Road, stopping for wine tasting in Franconia. End your adventure in Berlin, where you’ll visit the Brandenburg Gate, the Berlin Wall, and enjoy a night of traditional German cuisine and music."
+    },
+    {
+      "id":1,
+      "name":"The Netherlands – Windmills & Canals Discovery",
+      "country_id":1,
+      "images":"./assets/neth-tour-",
+      "description":"Discover the charm of the Netherlands on a tour that blends history, nature, and culture. Start in Amsterdam with a canal cruise and a visit to the world-famous Rijksmuseum. Cycle through the tulip fields of Keukenhof in spring or explore the traditional windmills of Zaanse Schans. In the historic city of Utrecht, stroll along tree-lined canals and hidden courtyards. Visit the cheese markets of Gouda and learn about Dutch cheese-making traditions. Wrap up your journey in The Hague, where you can explore the Mauritshuis Museum and take a relaxing walk along Scheveningen Beach."
+    },
+    {
+      "id":2,
+      "name":"France – Paris & Provence Elegance",
+      "country_id":2,
+      "images":"./assets/france-tour-",
+      "description":"From the romance of Paris to the charm of Provence, this tour offers the best of France. Begin in Paris, where you’ll explore the Eiffel Tower, the Louvre, and take a Seine River cruise. Enjoy a day trip to Versailles to see its magnificent palace and gardens. Head south to the lavender fields and vineyards of Provence, stopping in Avignon to visit the historic Palais des Papes. Explore the colorful markets of Aix-en-Provence and enjoy wine tasting in Châteauneuf-du-Pape. Conclude your tour with a visit to the coastal town of Nice, where you can relax by the Mediterranean and take in the stunning French Riviera views."
+    },
+    {
+      "id":3,
+      "name":"The Great Britain – Royal & Rustic Escape",
+      "country_id":3,
+      "images":"./assets/brit-tour-",
+      "description":"Experience the grandeur of British history and the beauty of its countryside. Start in London, where you’ll visit Buckingham Palace, the Tower of London, and take a ride on the London Eye. Venture into the rolling hills of the Cotswolds, stopping in picturesque villages like Bibury and Bourton-on-the-Water. Explore the ancient city of Bath, with its Roman Baths and Georgian architecture. Discover the mysteries of Stonehenge before heading to Edinburgh, Scotland, to see its majestic castle and walk along the Royal Mile. End your journey with a whisky-tasting experience in the Scottish Highlands."
+    },
+    {
+      "id":4,
+      "name":"Canada – Wild Wonders & City Lights",
+      "country_id":4,
+      "images":"./assets/canada-tour-",
+      "description":"Canada’s vast landscapes and dynamic cities offer an unforgettable journey. Begin in Vancouver, cycling along the scenic Seawall in Stanley Park and exploring Granville Island’s markets. Head to Banff National Park, where you’ll hike to breathtaking viewpoints and take a boat tour on Lake Louise. In Toronto, visit the iconic CN Tower and explore the multicultural neighborhoods. Venture to Niagara Falls for a thrilling boat ride near the cascading waters. Fly to Québec City to walk its cobblestone streets and experience French-Canadian culture. Conclude your adventure in Montreal with a food tour sampling poutine, bagels, and maple treats."
+    },
+    {
+      "id":5,
+      "name":"Japan – Tradition & Modernity in Harmony",
+      "country_id":5,
+      "images":"./assets/japan-tour-",
+      "description":"Uncover the diverse beauty of Japan, from bustling cities to serene temples. Start in Tokyo, exploring Shibuya’s neon lights and Asakusa’s historic Senso-ji Temple. Visit the digital art museum in Odaiba and experience a traditional tea ceremony. Take a bullet train to Kyoto, where you’ll stroll through bamboo forests, marvel at golden temples, and witness a geisha performance in Gion. In Nara, feed the sacred deer at Todai-ji Temple. Travel to Hakone for breathtaking views of Mount Fuji and a relaxing soak in an onsen. End your journey in Osaka, where you’ll savor street food and enjoy the vibrant nightlife of Dotonbori."
+    }
+]

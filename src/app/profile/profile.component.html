@@ -1,0 +1,110 @@
+<div class="profile-container">
+
+  <h2 class="profile-title">
+    <i class="fas fa-user-circle"></i> Profile
+  </h2>
+
+  <!-- Оборачиваем аватар и кнопку смены в контейнер -->
+  <div class="avatar-container">
+    <img class="profile-photo"
+         [src]="user?.avatarUrl || 'assets/images/default-avatar.png'"
+         alt="Profile photo">
+    <!-- Скрытый input для выбора файла -->
+    <input type="file" hidden #fileInput (change)="onAvatarSelected($event)" accept="image/*">
+    <!-- Кнопка для вызова выбора файла -->
+    <button class="change-avatar-button" type="button" (click)="fileInput.click()" title="Change avatar">
+        <i class="fas fa-camera"></i>
+    </button>
+  </div>
+
+
+  <!-- ======================= БЛОК ПРОСМОТРА (`*ngIf="!isEditing"`) ======================= -->
+  <div *ngIf="!isEditing" class="profile-info-view">
+       <!-- Информация о пользователе -->
+       <div class="info-item">
+         <i class="fas fa-user"></i>
+         <span class="info-label">Name:</span>
+         <span class="info-value">{{ user?.name }}</span>
+       </div>
+       <div class="info-item">
+         <i class="fas fa-user-tag"></i>
+         <span class="info-label">Surname:</span>
+         <span class="info-value">{{ user?.surname }}</span>
+       </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <span class="info-label">Email:</span>
+        <span class="info-value">{{ user?.email }}</span>
+      </div>
+       <div class="info-item">
+         <i class="fas fa-phone"></i>
+         <span class="info-label">Mobile number:</span>
+         <span class="info-value">{{ user?.phone }}</span>
+       </div>
+
+      <!-- ДОБАВЛЕНА ССЫЛКА НА СМЕНУ ПАРОЛЯ -->
+      <div class="security-link-container">
+          <a href="#" (click)="$event.preventDefault(); navigateToChangePassword()" class="change-password-link">
+            <i class="fas fa-key"></i> Change Password
+          </a>
+      </div>
+
+      <!-- Контейнер для кнопок Edit / Logout -->
+       <div class="view-actions">
+         <button class="profile-button" (click)="editProfile()">
+           <i class="fas fa-pencil-alt"></i> Edit
+         </button>
+         <!-- ДОБАВЛЕНА КНОПКА ВЫХОДА -->
+         <button type="button" class="profile-button logout-button" (click)="logout()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+         </button>
+       </div>
+  </div>
+
+  <!-- ====================== БЛОК РЕДАКТИРОВАНИЯ (`*ngIf="isEditing"`) ======================= -->
+  <form *ngIf="isEditing" [formGroup]="profileForm" (ngSubmit)="saveProfile()" class="profile-form">
+    <!-- Поля Имя, Фамилия, Email, Телефон как раньше -->
+    <div class="form-field">
+      <label for="name"><i class="fas fa-user"></i> Name:</label>
+      <input type="text" id="name" formControlName="name" placeholder="Enter name">
+      <div *ngIf="formControls['name'].invalid && (formControls['name'].dirty || formControls['name'].touched)" class="error-message">
+           <span *ngIf="formControls['name'].errors?.['required']">Name is required.</span>
+        </div>
+    </div>
+    <div class="form-field">
+      <label for="surname"><i class="fas fa-user-tag"></i> Surname:</label>
+      <input type="text" id="surname" formControlName="surname" placeholder="Enter surname">
+        <div *ngIf="formControls['surname'].invalid && (formControls['surname'].dirty || formControls['surname'].touched)" class="error-message">
+           <span *ngIf="formControls['surname'].errors?.['required']">Surname is required.</span>
+        </div>
+    </div>
+    <div class="form-field">
+      <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+      <input type="email" id="email" formControlName="email" placeholder="Enter email">
+      <div *ngIf="formControls['email'].invalid && (formControls['email'].dirty || formControls['email'].touched)" class="error-message">
+         <span *ngIf="formControls['email'].errors?.['required']">Email is required.</span>
+         <span *ngIf="formControls['email'].errors?.['email']">Invalid email format.</span>
+      </div>
+    </div>
+    <div class="form-field">
+      <label for="phone"><i class="fas fa-phone"></i> Mobile number:</label>
+      <input type="tel" id="phone" formControlName="phone" placeholder="Enter mobile number">
+       <div *ngIf="formControls['phone'].invalid && (formControls['phone'].dirty || formControls['phone'].touched)" class="error-message">
+          <span *ngIf="formControls['phone'].errors?.['required']">Mobile number is required.</span>
+          <span *ngIf="formControls['phone'].errors?.['pattern']">Invalid phone format.</span>
+       </div>
+    </div>
+
+    <!-- Кнопки Сохранить / Отмена -->
+     <div class="form-actions">
+       <button type="submit" class="profile-button save-button" [disabled]="profileForm.invalid">
+         <i class="fas fa-save"></i> Save
+       </button>
+       <button type="button" class="profile-button cancel-button" (click)="cancelEdit()">
+          <i class="fas fa-times"></i> Cancel
+       </button>
+     </div>
+
+  </form>
+
+</div>

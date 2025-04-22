@@ -1,0 +1,26 @@
+[ 
+    {
+        "country_id":0,
+        "id":0,
+        "text":"Awesome!",
+        "username":"John Doe",
+        "avatar_image":"./assets/user-icon-1.png",
+        "likes":0
+    },
+    {
+        "country_id":0,
+        "id":1,
+        "text":"Nice!",
+        "username":"Bob",
+        "avatar_image":"./assets/user-icon-1.png",
+        "likes":0
+    },
+    {
+        "country_id":1,
+        "id":2,
+        "text":"Nice!",
+        "username":"Bob",
+        "avatar_image":"./assets/user-icon-1.png",
+        "likes":0
+    }
+]

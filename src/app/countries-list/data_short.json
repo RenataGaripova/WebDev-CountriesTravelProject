@@ -1,0 +1,38 @@
+[
+    {
+      "id":0,
+      "image":"./assets/ger-flag.png",
+      "name":"Germany",
+      "description":"Germany, officially the Federal Republic of Germany,is a country in Central Europe. It lies between the Baltic Sea and the North Sea to the north and the Alps to the south."
+    },
+    {
+      "id":1,
+      "image":"./assets/netherlands-flag.png",
+      "name":"The Netherlands",
+      "description":"The Netherlands, informally Holland, is a country in Northwestern Europe, with overseas territories in the Caribbean. It is the largest of the four constituent countries of the Kingdom of the Netherlands."
+    },
+    {
+      "id":2,
+      "image":"./assets/france-flag.png",
+      "name":"France",
+      "description":"France, officially the French Republic, is a country located primarily in Western Europe. France is a semi-presidential republic and its capital, largest city and main cultural and economic centre is Paris."
+    },
+    {
+      "id":3,
+      "image":"./assets/britain-flag.png",
+      "name":"The Great Britain",
+      "description":"Great Britain is an island in the North Atlantic Ocean off the north-west coast of continental Europe, consisting of the countries England, Scotland, and Wales. With an area of 209,331 km2, it is the largest of the British Isles, the largest European island, and the ninth-largest island in the world."
+    },
+    {
+      "id":4,
+      "image":"./assets/canada-flag.png",
+      "name":"Canada",
+      "description":"Canada is a country in North America. Its ten provinces and three territories extend from the Atlantic Ocean to the Pacific Ocean and northward into the Arctic Ocean, making it the world's second-largest country by total area, with the world's longest coastline."
+    },
+    {
+      "id":5,
+      "image":"./assets/japan-flag.png",
+      "name":"Japan",
+      "description":"Japan is an island country in East Asia. Located in the Pacific Ocean off the northeast coast of the Asian mainland, it is bordered on the west by the Sea of Japan and extends from the Sea of Okhotsk in the north to the East China Sea in the south."
+    }
+]
