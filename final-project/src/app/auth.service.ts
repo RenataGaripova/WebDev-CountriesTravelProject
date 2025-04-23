@@ -19,12 +19,59 @@ export class AuthService {
     );
   }
 
+  isLoggedIn(): boolean {
+    if (typeof window !== 'undefined') {
+      return !!localStorage.getItem('access_token');
+    }
+    return false;
+  }
+
   logout() {
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
   }
 
-  isLoggedIn(): boolean {
-    return !!localStorage.getItem('access_token');
+  isLocalStorageAvailable(): boolean {
+    return typeof window !== 'undefined' && !!window.localStorage;
   }
+
+  getAccessToken(): string | null {
+    if (this.isLocalStorageAvailable()) {
+      return localStorage.getItem('access_token');
+    }
+    return null;
+  }
+
+  getUserFromToken(): any | null {
+    const token = this.getAccessToken();
+    if (!token) return null;
+  
+    try {
+      const payload = token.split('.')[1];
+      const decodedPayload = JSON.parse(atob(payload));
+      return decodedPayload;
+    } catch (err) {
+      console.error('Token decode failed', err);
+      return null;
+    }
+  }
+  
+  getUserEmail(): string | null {
+    if (!this.isLocalStorageAvailable()) return null;
+  
+    const token = this.getAccessToken();
+    if (!token) return null;
+  
+    try {
+      const payload = token.split('.')[1];
+      const decoded = JSON.parse(atob(payload));
+      return decoded.email || null;
+    } catch (e) {
+      console.error('Failed to decode token', e);
+      return null;
+    }
+  }
+
+  
+  
 }

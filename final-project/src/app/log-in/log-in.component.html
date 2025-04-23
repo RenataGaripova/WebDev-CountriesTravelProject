@@ -1,7 +1,7 @@
 <div class="parent">
     <!-- <img src="/assets/image-log-in.png"> -->
     
-    <form (ngSubmit)="login()" #loginForm="ngForm">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
         <h1>Sign In</h1>
         <br>
         <div class="form-group">

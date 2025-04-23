@@ -8,6 +8,8 @@ from api.serializers import CountrySerializer, CommentSerializer, CountryListSer
 # from rest_framework.response import Response
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes
 # Create your views here.
 
 
@@ -115,3 +117,33 @@ def user_sign_up(request):
         'access': str(refresh.access_token),
     }, status=status.HTTP_201_CREATED)
 
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_current_user(request):
+    user = request.user
+    return Response({
+        'id': user.id,
+        'email': user.email,
+        'first_name': user.first_name,
+        'last_name': user.last_name
+    })
+
+
+@api_view(['GET', 'PUT'])
+@permission_classes([IsAuthenticated])
+def user_profile(request):
+    user = request.user
+    if request.method == 'GET':
+        return Response({
+            'email': user.email,
+            'first_name': user.first_name,
+            'last_name': user.last_name
+        })
+    elif request.method == 'PUT':
+        user.first_name = request.data.get('first_name', user.first_name)
+        user.last_name = request.data.get('last_name', user.last_name)
+        user.email = request.data.get('email', user.email)
+        user.username = request.data.get('email', user.email)
+        user.save()
+        return Response({'message': 'Profile updated'})

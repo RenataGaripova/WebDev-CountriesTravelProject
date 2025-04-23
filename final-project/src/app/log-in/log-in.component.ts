@@ -15,22 +15,22 @@ export class LoginComponent {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  login() {
-    const credentials = {
-      username: this.email,
-      password: this.password
+  login(form: NgForm) {
+    const data = {
+      username: form.value.email,
+      password: form.value.password
     };
-
-    this.http.post<any>('http://localhost:8000/api/token/', credentials)
+  
+    this.http.post<any>('http://localhost:8000/api/token/', data)
       .subscribe({
-        next: (response) => {
-          localStorage.setItem('access_token', response.access);
-          localStorage.setItem('refresh_token', response.refresh);
+        next: (res) => {
+          localStorage.setItem('access_token', res.access);
+          localStorage.setItem('refresh_token', res.refresh);
           this.router.navigate(['']);
         },
         error: (err) => {
-          console.error('Login failed', err);
-          alert('Invalid username or password');
+          alert('Login failed');
+          console.error(err);
         }
       });
   }

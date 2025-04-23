@@ -5,6 +5,7 @@ import { CountryComponent } from './country/country.component';
 import { TourComponent } from './tour/tour.component';
 import { LoginComponent } from './log-in/log-in.component';
 import { LogupComponent } from './log-up/log-up.component';
+import { ProfileComponent } from './profile/profile.component';
 export const routes: Routes = [
   {
     path: 'countrieslist',
@@ -34,4 +35,5 @@ export const routes: Routes = [
     component: TourComponent,
     title: 'Tour Details',
   },
+  { path: 'profile', component: ProfileComponent },
 ];

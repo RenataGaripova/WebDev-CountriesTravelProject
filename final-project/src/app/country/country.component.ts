@@ -41,16 +41,19 @@ export class CountryComponent implements OnInit {
 
   sendLike(comment: Comments) {
     this.countryService.sendLike(comment);
+    comment.likes+=1;
   }
   
   submitComment(form: any) {
     const new_comm: Comments = form.value;
     new_comm['avatar_image'] = "./assets/user-icon-1.png";
+    new_comm['likes']=0;
     if (form.value.text && form.value.username) {
       if (this.comments?.length !== undefined) {
         this.new_id = this.comments.length;
         this.comments.push(form.value);
         this.countryService.postComment(this.countryId, new_comm);
+        window.location.reload();
       }      
     }
   }
