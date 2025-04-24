@@ -4,23 +4,19 @@
     <i class="fas fa-user-circle"></i> Profile
   </h2>
 
-  <!-- Оборачиваем аватар и кнопку смены в контейнер -->
   <div class="avatar-container">
     <img class="profile-photo"
          [src]="user?.avatarUrl || 'assets/images/default-avatar.png'"
          alt="Profile photo">
-    <!-- Скрытый input для выбора файла -->
     <input type="file" hidden #fileInput (change)="onAvatarSelected($event)" accept="image/*">
-    <!-- Кнопка для вызова выбора файла -->
     <button class="change-avatar-button" type="button" (click)="fileInput.click()" title="Change avatar">
         <i class="fas fa-camera"></i>
     </button>
   </div>
 
 
-  <!-- ======================= БЛОК ПРОСМОТРА (`*ngIf="!isEditing"`) ======================= -->
   <div *ngIf="!isEditing" class="profile-info-view">
-       <!-- Информация о пользователе -->
+     
        <div class="info-item">
          <i class="fas fa-user"></i>
          <span class="info-label">Name:</span>
@@ -42,28 +38,24 @@
          <span class="info-value">{{ user?.phone }}</span>
        </div>
 
-      <!-- ДОБАВЛЕНА ССЫЛКА НА СМЕНУ ПАРОЛЯ -->
       <div class="security-link-container">
           <a href="#" (click)="$event.preventDefault(); navigateToChangePassword()" class="change-password-link">
             <i class="fas fa-key"></i> Change Password
           </a>
       </div>
 
-      <!-- Контейнер для кнопок Edit / Logout -->
        <div class="view-actions">
          <button class="profile-button" (click)="editProfile()">
            <i class="fas fa-pencil-alt"></i> Edit
          </button>
-         <!-- ДОБАВЛЕНА КНОПКА ВЫХОДА -->
          <button type="button" class="profile-button logout-button" (click)="logout()">
             <i class="fas fa-sign-out-alt"></i> Logout
          </button>
        </div>
   </div>
 
-  <!-- ====================== БЛОК РЕДАКТИРОВАНИЯ (`*ngIf="isEditing"`) ======================= -->
   <form *ngIf="isEditing" [formGroup]="profileForm" (ngSubmit)="saveProfile()" class="profile-form">
-    <!-- Поля Имя, Фамилия, Email, Телефон как раньше -->
+
     <div class="form-field">
       <label for="name"><i class="fas fa-user"></i> Name:</label>
       <input type="text" id="name" formControlName="name" placeholder="Enter name">
@@ -95,7 +87,6 @@
        </div>
     </div>
 
-    <!-- Кнопки Сохранить / Отмена -->
      <div class="form-actions">
        <button type="submit" class="profile-button save-button" [disabled]="profileForm.invalid">
          <i class="fas fa-save"></i> Save
