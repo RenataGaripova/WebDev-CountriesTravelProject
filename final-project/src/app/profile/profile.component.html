@@ -51,7 +51,7 @@
   
         <!-- Контейнер для кнопок Edit / Logout -->
          <div class="view-actions">
-           <button class="profile-button" (click)="editProfile()">
+           <button class="profile-button" (click)="editProfile()" *ngIf="authService.isLoggedIn()===true">
              <i class="fas fa-pencil-alt"></i> Edit
            </button>
            <!-- ДОБАВЛЕНА КНОПКА ВЫХОДА -->
